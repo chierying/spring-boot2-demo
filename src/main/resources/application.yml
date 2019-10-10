@@ -1,0 +1,43 @@
+spring:
+
+  application:
+    name: User-Service
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/test
+    username: root
+    password: 123456
+    # 新版的驱动类
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  activemq:
+    broker-url: tcp://localhost:61616
+    # 默认的管理员
+    user: admin
+    password: admin
+    # 使用连接池
+    pool:
+      enabled: true
+      max-connections: 50
+    # 信任所有的包
+    packages:
+      trust-all: true
+
+  jms:
+    # 开启发布订阅模式
+    pub-sub-domain: true
+    template:
+      # 默认的topic
+      default-destination: activemq.default.destination
+
+
+
+
+
+
+
+logging:
+  level:
+    org:
+      springframework:
+        DEBUG
